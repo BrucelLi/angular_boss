@@ -1,0 +1,26 @@
+<div class="boss-login-box">
+  <div class="boss-login-title">手机号登录/注册</div>
+  <InputItem
+    [type]="'phone'"
+    [placeholder]="'请输入手机号'"
+    [value]="value"
+    [error]="error"
+    [content]="'手机号码'"
+    (onErrorClick)="inputErrorClick($event)"
+    (onChange)="inputChange($event)"
+  >
+  </InputItem>
+  <div (click)="goToLoginStep2()" class="boss-login-btn" Button [type]="'primary'">下一步</div>
+  <div (click)="goToLoginByPass()">账号密码登录</div>
+  <div (click)="goToLoginByWeChat()" class="boss-login-wechat">
+    微信登录
+    <div>
+      <i class="iconfont icon-weixin"></i>
+    </div>
+  </div>
+  <div (click)="goToLoginDesc()" class="boss-login-desc">阅读<span>《用户协议及隐私政策》</span></div>
+  <Modal [ngModel]="modal" [transparent]="true" [title]="'用户协议及隐私政策'" [footer]="footer">
+    <div style="height: 80vw; overflow-y: scroll; overflow-x: hidden" [innerHTML]="contentDesc">
+    </div>
+  </Modal>
+</div>

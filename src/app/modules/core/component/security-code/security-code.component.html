@@ -1,0 +1,9 @@
+<div class="boss-security-code-box">
+  <div class="boss-security-code-input-box">
+    <div *ngFor="let num of codeNum" class="boss-security-code-input" (click)="onInputClick(num)">
+      <div *ngIf="num.showState && num.value === ''" class="boss-security-code-focus-line"></div>
+      <div *ngIf="num.value !== ''" class="boss-security-code-num">{{num.value}}</div>
+    </div>
+  </div>
+  <label for="boss-security-code-hidden-input"></label><input id="boss-security-code-hidden-input" type="text" [maxLength]="codeNum.length" [ngModel]="inputValue" (input)="onInput($event)" />
+</div>

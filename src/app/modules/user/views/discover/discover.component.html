@@ -1,0 +1,59 @@
+<div class="boss-discover-box">
+  <div class="boss-discover-header">
+    <label class="fl">发现</label>
+    <app-search-input class="fl boss-discover-header-input" (changeFn)="onSearchChange($event)"
+                      (searchFn)="onSearch($event)" placeholder="搜索职位/公司/知识点"></app-search-input>
+    <div class="fl boss-discover-notify" (click)="onNotify()">
+      <Badge [text]="notifyNum">
+        <i class="iconfont icon-huaban37fuben"></i>
+      </Badge>
+    </div>
+    <app-head-photo class="fr boss-discover-img" [width]="25" [imgUrl]="'../../../assets/img/timg.jpg'"
+                    (click)="onHeadImgClick()"></app-head-photo>
+  </div>
+  <div class="boss-discover-nav">
+    <div *ngFor="let item of discoverNav">
+      <i class="iconfont" [ngClass]="item.img"></i>
+      <div>{{item.name}}</div>
+    </div>
+  </div>
+  <div class="boss-discover-list-box">
+    <app-pull-to-refresh-box>
+      <div class="boss-discover-list-line" *ngFor="let item of discoverListData">
+        <div class="boss-discover-list-sort">
+          <div class="fl boss-discover-list-sort-name">
+            <div class="boss-discover-list-sort-tag fl">#</div>
+            <span class="fl">{{item.tag}}</span>
+          </div>
+          <div class="fr boss-discover-list-sort-share">...</div>
+        </div>
+        <div class="boss-discover-list-head">
+          <app-head-photo class="fl boss-discover-list-head-img" [width]="40" [imgUrl]="item.userInfo.img"></app-head-photo>
+          <div class="fl">
+            <div class="name">{{item.userInfo.name}}</div>
+            <div class="pos">{{item.userInfo.pos}}-{{item.userInfo.posYear}}</div>
+          </div>
+        </div>
+        <div class="boss-discover-list-problem">
+          <div class="tag fl">问</div>
+          <div class="content fl">{{item.title}}</div>
+        </div>
+        <div class="boss-discover-list-content">
+          {{item.desc}}
+        </div>
+        <div class="boss-discover-list-bottom">
+          <div class="fl left-box">
+            <i class="iconfont icon-dianzan fl"></i>
+            <div class="fl">{{item.upNum}}</div>
+            <div class="fr">{{item.commentNum}}</div>
+            <i class="iconfont icon-xiaoxi fr"></i>
+          </div>
+          <div class="fr" [ngClass]="(getState % 2 === 0)? 'right-box-active': 'right-box'" (click)="onChangeGetState()">
+            <i class="iconfont icon-buoumaotubiao16"></i>
+            Get
+          </div>
+        </div>
+      </div>
+    </app-pull-to-refresh-box>
+  </div>
+</div>

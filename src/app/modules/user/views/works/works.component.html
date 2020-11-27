@@ -1,0 +1,56 @@
+<div class="boss-works-box">
+  <div class="boss-works-head-nav">
+    <div class="boss-works-head-nav-search-tag">
+      <div [ngClass]="selectSearchTagIndex === searchTag.id ? 'active' : ''" *ngFor="let searchTag of searchTagData"
+           (click)="headNavClick(searchTag)">{{searchTag.name}}</div>
+    </div>
+    <div class="boss-works-head-nav-search-icon-box">
+      <i (click)="headNavSearch()" class="boss-works-head-nav-search-icon-search iconfont icon-icon-test"></i>
+      <i (click)="headNavAddTag()" class="iconfont icon-search"></i>
+    </div>
+  </div>
+  <div class="boss-works-filter">
+    <div class="boss-works-filter-left">
+      <div (click)="worksOrderClick(searchFilter)"
+           [ngClass]="selectSearchOrderIndex === searchFilter.id ? 'active' : ''"
+           *ngFor="let searchFilter of searchOrderData">{{searchFilter.name}}</div>
+    </div>
+    <div class="boss-works-filter-right">
+      <div (click)="worksFilterClick(searchFilter)"
+           *ngFor="let searchFilter of searchFilterData">{{searchFilter.name}}</div>
+    </div>
+  </div>
+
+  <div class="boss-works-content">
+    <app-pull-to-refresh-box [data]="data" (getItemE)="loadList($event)">
+      <div (click)="workListClick(workList)" *ngFor="let workList of workListData" class="boss-works-content-line">
+        <div class="boss-works-content-line-top">
+          <div class="boss-works-content-line-top-name">{{workList.name}}</div>
+          <div class="boss-works-content-line-top-price">{{workList.price}}</div>
+        </div>
+        <div class="boss-works-content-line-require">
+          <div *ngFor="let item of workList.workRequire">{{item.name}}</div>
+        </div>
+        <div class="boss-works-content-line-company">
+          <div *ngFor="let item of workList.workCompany">{{item.name}}</div>
+        </div>
+        <div class="boss-works-content-line-person">
+          <div class="fl">
+            <div class="fl"><app-head-photo [width]="30" [imgUrl]="'../../../assets/img/' + workList.hrImg"></app-head-photo></div>
+            <div class="fl">{{workList.hrName}}</div>
+          </div>
+          <div class="fr">
+            <div class="fr">{{workList.workArea}}</div>
+            <div class="fr">{{workList.workCity}}</div>
+          </div>
+        </div>
+      </div>
+
+    </app-pull-to-refresh-box>
+    <div>
+      <Modal [(ngModel)]="this.state.modal1" [popup]="true" [animationType]="'slide-up'" (onClose)="onClose('modal1')">
+        <app-area-popup></app-area-popup>
+      </Modal>
+    </div>
+  </div>
+</div>

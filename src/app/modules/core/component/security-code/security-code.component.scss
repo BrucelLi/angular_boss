@@ -1,0 +1,43 @@
+.boss-security-code-box{
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+  input{
+    position: absolute;
+    left: 0;
+    height: 0;
+    z-index: 1;
+    opacity: 0;
+  }
+  .boss-security-code-input-box{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-between;
+    .boss-security-code-input{
+      z-index: 10;
+      width: 18vw;
+      height: 10vw;
+      border-bottom: 2px solid #f2f2f2;
+      text-align: center;
+      .boss-security-code-num{
+        line-height: 10vw;
+        font-size: 6vw;
+      }
+      @keyframes my-first
+      {
+        0%   {background: #55b4a1;}
+        50%  {background: white;}
+        100% {background: #55b4a1;}
+      }
+      .boss-security-code-focus-line{
+        width: 2px;
+        height: 8vw;
+        background-color: #55b4a1;
+        margin: 0 auto;
+        animation: my-first 1s linear 1s infinite alternate;
+      }
+    }
+  }
+}

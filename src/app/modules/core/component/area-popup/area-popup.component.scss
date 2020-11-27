@@ -1,0 +1,27 @@
+@charset "UTF-8";
+.boss-home-area-popup-box{
+  width: 100vw;
+  height: 100vh;
+  .boss-home-area-popup-picker{
+  }
+  .boss-home-area-popup-btn-box{
+    position: absolute;
+    bottom: 0;
+    width: 100vw;
+    height: 25vw;
+    padding: 5vw;
+    border-top: 1px solid #ededed;
+    .boss-home-area-btn-cache{
+      width: 20vw;
+      float: left;
+      color: #666666;
+      background-color: #f8f8f8;
+    }
+    .boss-home-area-btn-sure{
+      width: 45vw;
+      float: right;
+      color: white;
+      background-color: #63bfba;
+    }
+  }
+}

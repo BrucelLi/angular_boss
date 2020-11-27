@@ -1,0 +1,12 @@
+{
+  "/api":{
+    "target":"https://ceshi.007ka.cn/196/nnk_charge_center/",
+    "secure":false,
+    "logLevel":"debug",
+    "changeOrigin":true,
+    "pathRewrite":{
+      "^/api":""
+    }
+
+  }
+}

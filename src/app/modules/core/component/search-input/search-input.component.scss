@@ -1,0 +1,22 @@
+.boss-search-box {
+  height: 8vw;
+  line-height: 8vw;
+  border-radius: 4vw;
+  padding: 0 2vw;
+
+  input {
+    border: 0;
+    background-color: #5accc7;
+    padding-left: 2vw;
+    color: white;
+    outline: none;
+
+    &::placeholder {
+      color: white;
+    }
+  }
+
+  .iconfont {
+    color: white;
+  }
+}

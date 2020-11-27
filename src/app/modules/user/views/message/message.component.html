@@ -1,0 +1,106 @@
+<div class="boss-message-box">
+  <div class="boss-message-header">
+    <div class="fl" [ngClass]="changeState.pageNum === 1 ? 'active': ''" (click)="onChangePage(1)">聊天</div>
+    <div class="fl" [ngClass]="changeState.pageNum === 2 ? 'active': ''" (click)="onChangePage(2)">互动</div>
+    <div class="fr" (click)="onTopNotify()">
+      <Badge [text]="notifyNum">
+        <i class="iconfont icon-huaban37fuben"></i>
+      </Badge>
+    </div>
+  </div>
+  <div [ngSwitch]="changeState.pageNum">
+    <div *ngSwitchDefault>
+      <NoticeBar
+        [option]="{ content: noticeContent, font: '14px', mode: 'link' }"
+        (onClick)="onNotifyClick()"
+      >
+      </NoticeBar>
+      <div class="boss-message-tag-box">
+        <div class="boss-message-tag-l">
+          <Badge class="boss-message-tag" [dot]="true" [ngClass]="changeState.tagPageNum === 1 ? 'active' : ''"
+                 (click)="onChangeState('tagPageNum',1)">
+            <div>全部</div>
+          </Badge>
+          <Badge class="boss-message-tag" [dot]="true" [ngClass]="changeState.tagPageNum === 2 ? 'active' : ''"
+                 (click)="onChangeState('tagPageNum',2)">
+            <div>招呼</div>
+          </Badge>
+          <Badge class="boss-message-tag" [dot]="true" [ngClass]="changeState.tagPageNum === 3 ? 'active' : ''"
+                 (click)="onChangeState('tagPageNum',3)">
+            <div>沟通中</div>
+          </Badge>
+        </div>
+        <div class="boss-message-tag-r">极速处理·17</div>
+      </div>
+      <div class="boss-message-line-box">
+        <app-pull-to-refresh-box [data]="messageData" (getItemE)="onGetMessageList($event)">
+          <div *ngFor="let message of messageData" class="boss-message-line">
+            <Badge class="boss-message-line-head-box" [dot]="message.msgNum > 10"
+                   [text]="message.msgNum > 10 ? '' : message.msgNum">
+              <app-head-photo class="boss-message-line-head" [width]="50" [imgUrl]="message.headImg"
+                              (click)="onHeadImgClick()"></app-head-photo>
+            </Badge>
+            <div class="fl" (click)="goToChat()">
+              <div>
+                <span class="boss-message-line-title">{{message.title}}</span><span
+                class="boss-message-line-pos">{{message.pos}}</span>
+              </div>
+              <div class="boss-message-line-tag-box" [ngSwitch]="message.tagType">
+                <div *ngSwitchDefault>{{message.tagName ? '[' + message.tagName + ']' : ''}} {{message.desc}}</div>
+                <div *ngSwitchCase="2">
+                  <span>{{message.tagName ? '[' + message.tagName + ']' : ''}}</span> {{message.desc}}</div>
+              </div>
+            </div>
+            <div class="fr boss-message-line-time">{{message.time}}</div>
+          </div>
+        </app-pull-to-refresh-box>
+      </div>
+    </div>
+    <div *ngSwitchCase="2">
+      <div class="boss-message-interact-search">
+        <div [ngClass]="changeState.searchNum === 1 ? 'active': ''" (click)="onChangeState('searchNum', 1)">对我感兴趣</div>
+        <div [ngClass]="changeState.searchNum === 2 ? 'active': ''" (click)="onChangeState('searchNum', 2)">看过我</div>
+        <div [ngClass]="changeState.searchNum === 3 ? 'active': ''" (click)="onChangeState('searchNum', 3)">新职位</div>
+      </div>
+      <div class="boss-message-interact-tag">
+        <div [ngClass]="changeState.searchTagNum === 1 ? 'active': ''" (click)="onChangeState('searchTagNum', 1)">全部
+        </div>
+        <div [ngClass]="changeState.searchTagNum === 2 ? 'active': ''" (click)="onChangeState('searchTagNum', 2)">
+          python
+        </div>
+        <div [ngClass]="changeState.searchTagNum === 3 ? 'active': ''" (click)="onChangeState('searchTagNum', 3)">php
+        </div>
+        <div [ngClass]="changeState.searchTagNum === 4 ? 'active': ''" (click)="onChangeState('searchTagNum', 4)">
+          移动web前段
+        </div>
+        <div [ngClass]="changeState.searchTagNum === 5 ? 'active': ''" (click)="onChangeState('searchTagNum', 5)">附近
+        </div>
+      </div>
+      <div class="boss-message-interact-box">
+        <app-pull-to-refresh-box [data]="messageInteractData" (getItemE)="onGetMessageInteractData($event)">
+          <div *ngFor="let item of messageInteractData" class="boss-message-interact-line-box">
+            <div class="boss-message-interact-line">
+              <div class="fl boss-message-interact-line-title">{{item.title}} <span class="boss-message-interact-line-tag">{{item.titleTag}}</span></div>
+              <div class="fr boss-message-interact-line-price">{{item.price}}</div>
+            </div>
+            <div class="boss-message-interact-line">
+              <div class="fl">{{item.company}} <span>{{item.companyDesc}}</span></div>
+              <div class="fr boss-message-interact-line-area">{{item.distance}}</div>
+            </div>
+            <div class="boss-message-interact-line">
+              <div *ngFor="let tagItem of item.tag" class="fl boss-message-interact-line-tag1">{{tagItem.name}}</div>
+            </div>
+            <div class="boss-message-interact-line">
+              <div class="fl">
+                <app-head-photo style="margin-right: 5vw" class="fl" [width]="25" [imgUrl]="item.userHead"
+                                (click)="onHeadImgClick()"></app-head-photo>
+                <div class="fl">{{item.name}}·{{item.pos}}</div>
+              </div>
+              <div class="fr boss-message-interact-line-tag2">{{item.msgTag}}</div>
+            </div>
+          </div>
+        </app-pull-to-refresh-box>
+      </div>
+    </div>
+  </div>
+</div>

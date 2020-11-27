@@ -1,0 +1,7 @@
+<div class="boss-home-area-popup-box">
+  <PickerView class="boss-home-area-popup-picker" [data]="data" [(ngModel)]="value" [cols]="3" [cascade]="true" (ngModelChange)="onChange($event)"></PickerView>
+  <div class="boss-home-area-popup-btn-box">
+    <div class="boss-home-area-btn-cache" Button (onClick)="onClearClick()">清除</div>
+    <div class="boss-home-area-btn-sure" Button (onClick)="onSureClick()">确定</div>
+  </div>
+</div>

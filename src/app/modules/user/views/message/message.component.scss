@@ -1,0 +1,191 @@
+.boss-message-box{
+  width: 100vw;
+  .boss-message-header{
+    height: 12vw;
+    line-height: 12vw;
+    padding: 0 5vw;
+    background-color: #63bfba;
+    color: #bae5e3;
+    font-size: 4vw;
+    .active {
+      color: white;
+      font-size: 4.5vw;
+    }
+    .iconfont{
+      font-size: 6vw;
+      color: white;
+    }
+  }
+  .boss-message-header div:nth-child(1){
+    margin-right: 2vw;
+  }
+
+  .boss-message-tag-box{
+    padding: 0 5vw;
+    border-bottom: 1px solid #efefef;
+    height: 15vw;
+    line-height: 15vw;
+    color: #747474;
+    .boss-message-tag-l{
+      font-size: 4vw;
+      float: left;
+      .boss-message-tag{
+        margin-right: 4vw;
+        div{
+          float: left;
+        }
+      }
+      .active{
+        color: black;
+        font-weight: bold;
+      }
+    }
+    .boss-message-tag-r{
+      float: right;
+      color: #63bfba;
+      border: 1px solid #63bfba;
+      height: 7vw;
+      line-height: 7vw;
+      padding: 0 1vw;
+      margin-top: 4vw;
+      border-radius: 2px;
+    }
+  }
+
+  .boss-message-line-box{
+    width: 90vw;
+    position: absolute;
+    top: 36vw;
+    left: 5vw;
+    bottom: -30vw;
+    .boss-message-line{
+      width: 100%;
+      height: 14vw;
+      color: #c7c7c7;
+      font-size: 3.5vw;
+      margin-top: 5vw;
+      .boss-message-line-head-box{
+        margin-right: 5vw;
+        float: left;
+        .boss-message-line-head{
+          width: 11vw;
+          height: 10vw;
+          display:inline-block
+        }
+      }
+      .boss-message-line-title{
+        margin-top: 1.5vw;
+        color: black;
+        font-size: 4vw;
+      }
+      .boss-message-line-pos{
+        margin-left: 1vw;
+        font-size: 3vw;
+      }
+
+      .boss-message-line-time{
+        font-size: 3vw;
+        line-height: 14vw;
+      }
+      .boss-message-line-tag-box{
+        span{
+          color: #4ea6a5;
+        }
+      }
+    }
+  }
+
+  .boss-message-interact-search{
+    width: 90vw;
+    margin: 0 auto;
+    color: #c7c7c7;
+    font-size: 4vw;
+    height: 15vw;
+    line-height: 15vw;
+    div {
+      float: left;
+      margin-right: 5vw;
+    }
+    .active{
+      color: black;
+    }
+  }
+
+  .boss-message-interact-tag{
+    width: 90vw;
+    margin: 0 auto;
+    height: 15vw;
+    div{
+      border: 1px solid #aaaaaa;
+      border-radius: 5px;
+      height: 7vw;
+      line-height: 7vw;
+      padding: 0 2vw;
+      float: left;
+      margin-right: 2vw;
+    }
+    .active{
+      border: 1px solid #7cc2bc;
+      color: #7cc2bc;
+      background-color: #eef9f9;
+    }
+  }
+
+  .boss-message-interact-box{
+    background-color: #f5f5f5;
+    position: absolute;
+    top: 36vw;
+    bottom: -30vw;
+    .boss-message-interact-line-box{
+      padding: 5vw 5vw;
+      height: 35vw;
+      margin: 0 auto 2vw;
+      background-color: white;
+      .boss-message-interact-line{
+        width: 90vw;
+        height: 6vw;
+        line-height: 6vw;
+        font-size: 3.5vw;
+        margin-bottom: 1vw;
+        .boss-message-interact-line-title{
+          color: #333333;
+          font-size: 5vw;
+          .boss-message-interact-line-tag{
+            border: 1px solid #68b1b0;
+            color: #68b1b0;
+            background-color: #eef9f9;
+            border-radius: 2px;
+            font-size: 3vw;
+            position: relative;
+            top: -1vw;
+          }
+        }
+        .boss-message-interact-line-price{
+          color: #68b1b0;
+        }
+
+        .boss-message-interact-line-area{
+          color: #bfbfbf;
+        }
+        .boss-message-interact-line-tag1{
+          background-color: #f5f5f5;
+          border-radius: 5px;
+          height: 6vw;
+          line-height: 6vw;
+          padding: 0 2vw;
+          margin-right: 3vw;
+          font-size: 3vw;
+        }
+        .boss-message-interact-line-tag2{
+          height: 3.5vw;
+          line-height: 3.5vw;
+          border-radius: 1.75vw;
+          background-color: red;
+          font-size: 2.5vw;
+          color: white;
+          padding: 0 1vw;
+        }
+      }
+    }
+  }
+}

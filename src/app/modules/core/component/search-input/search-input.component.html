@@ -1,0 +1,16 @@
+<div class="boss-search-box">
+  <i class="iconfont icon-sousuo" (click)="onSearchSub()"></i>
+  <label>
+    <input
+      [name]="'search'"
+      [type]="'text'"
+      [disabled]="disabled"
+      [maxlength]="maxLength"
+      [placeholder]="placeholder"
+      [ngModel]="value"
+      (blur)="onSearchBlur()"
+      (focus)="onSearchFocus()"
+      (ngModelChange)="onSearchChange($event)"/>
+  </label>
+  <i *ngIf="clearBtn" class="fr iconfont icon-quxiao" (click)="onClear()"></i>
+</div>

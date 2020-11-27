@@ -1,0 +1,8 @@
+<div class="boss-login-step2-box">
+  <div class="boss-login-step2-name">输入短信验证码</div>
+  <div class="boss-login-step2-title">已向您的手机{{phoneNum.slice(phoneNum.length - 4)}}发送验证码</div>
+  <app-security-code num="4" (codeInput)="onInput($event)"></app-security-code>
+  <div class="boss-login-step2-send" (click)="sendMsg()">重新发送({{times}})</div>
+  <div class="boss-login-step2-btn" Button (onClick)="onLogin()">下一步</div>
+  <div (click)="voiceCode()">语音接听验证码</div>
+</div>

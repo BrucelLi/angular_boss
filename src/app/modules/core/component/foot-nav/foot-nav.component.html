@@ -1,0 +1,7 @@
+<div class="boss-home-bottom-nav">
+  <div [ngClass]="selectIndex === bottomNav.id ? 'active' : ''" (click)="bottomNavClick(bottomNav)" *ngFor="let bottomNav of bottomNavData" class="boss-home-bottom-nav-line">
+    <div><i class="iconfont" [ngClass]="bottomNav.img"></i></div>
+    <div>{{bottomNav.name}}</div>
+    <Badge *ngIf="bottomNav.star > 0" class="boss-home-bottom-nav-line-badge" [text]="bottomNav.star" [overflowCount]="99"></Badge>
+  </div>
+</div>

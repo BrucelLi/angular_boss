@@ -1,0 +1,10 @@
+<!--内容-->
+<div [ngSwitch]="pageId">
+  <app-discover *ngSwitchCase="2"></app-discover>
+  <app-message *ngSwitchCase="3"></app-message>
+  <app-my *ngSwitchCase="4"></app-my>
+  <app-works *ngSwitchDefault></app-works>
+</div>
+
+<!--底部导航-->
+<app-foot-nav (navClick)="navClick($event)" [bottomNavData]="bottomNavData"></app-foot-nav>

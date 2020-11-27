@@ -1,0 +1,198 @@
+.boss-discover-box{
+  width: 100vw;
+  margin-bottom: 15vw;
+  background-color: white;
+  .boss-discover-header{
+    height: 12vw;
+    line-height: 12vw;
+    background-color: #38c1b9;
+    padding: 0 5vw;
+    label{
+      color: white;
+      font-size: 4.5vw;
+      margin-right: 1vw;
+    }
+
+    .boss-discover-header-input{
+      width: 55vw;
+      height: 8vw;
+      line-height: 8vw;
+      border-radius: 4vw;
+      background-color: #5accc7;
+      border: 1px solid #5accc7;
+      margin: 2vw;
+    }
+
+    .boss-discover-notify{
+      margin-left: 3vw;
+      .iconfont{
+        color: white;
+        font-size: 6vw;
+      }
+    }
+
+    .boss-discover-img{
+      margin-top: 2vw;
+    }
+  }
+
+  .boss-discover-nav{
+    width: 90vw;
+    margin: 0 auto;
+    border-bottom: 1px solid #e4e4e4;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5vw 0;
+    text-align: center;
+    color: #6b6b6b;
+    .iconfont{
+      font-size: 10vw;
+      margin-bottom: 2vw;
+    }
+
+    .icon-gongsi{
+      color: #5accc7;
+    }
+
+    .icon-hot{
+      color: #f96353;
+    }
+
+    .icon-jishitaolun{
+      color: #fc9021;
+    }
+
+    .icon-boshi{
+      color: #fede09;
+    }
+
+    .icon-ai-article{
+      color: #82d26b;
+    }
+  }
+
+  .boss-discover-list-box{
+    width: 90vw;
+    margin: 0 auto;
+    background-color: #f5f5f5;
+    .boss-discover-list-line{
+      margin-bottom: 1vw;
+      padding: 3vw 0;
+      background-color: white;
+      .boss-discover-list-sort{
+        height: 10vw;
+        .boss-discover-list-sort-name{
+          color: #676767;
+          padding: 1vw 2vw;
+          background-color: #f5f5f5;
+          border-radius: 4.5vw;
+          .boss-discover-list-sort-tag{
+            width: 5vw;
+            height: 5vw;
+            border-radius: 2.5vw;
+            text-align: center;
+            line-height: 5vw;
+            background-color: #47b4ab;
+            color: white;
+            margin-right: 2vw;
+          }
+        }
+
+        .boss-discover-list-sort-share{
+          font-size: 5vw;
+        }
+      }
+
+      .boss-discover-list-head{
+        height: 10vw;
+        .boss-discover-list-head-img{
+          margin-right: 1vw;
+        }
+        .name{
+          font-weight: bold;
+          font-size: 4vw;
+        }
+        .pos{
+          color: #797979;
+          font-size: 2.5vw;
+        }
+      }
+      .boss-discover-list-problem{
+        height: 12vw;
+        line-height: 12vw;
+        background-color: #f8f8f8;
+        text-align: left;
+        margin: 3vw 0;
+        .tag{
+          width: 5vw;
+          height: 5vw;
+          border-radius: 4px;
+          text-align: center;
+          line-height: 5vw;
+          background-color: white;
+          border: 2px solid #47b4ab;
+          color: #47b4ab;
+          font-size: 3vw;
+          margin-top: 3.5vw;
+        }
+
+        .content{
+          color: #2e2e2e;
+          font-weight: bold;
+          margin-left: 2vw;
+        }
+      }
+
+      .boss-discover-list-content{
+
+      }
+
+      .boss-discover-list-bottom{
+        height: 6vw;
+        line-height: 6vw;
+        .iconfont{
+          font-size: 5vw;
+          color: #6f6f6f;
+        }
+        .left-box{
+          width: 25vw;
+          div{
+            margin-left: 2vw;
+          }
+        }
+        .right-box{
+          border: 1px solid #939393;
+          color: #939393;
+          border-radius: 2px;
+          width: 16vw;
+          height: 6vw;
+          line-height: 6vw;
+          text-align: center;
+          font-weight: bold;
+          .iconfont{
+            color: #939393;
+            font-size: 3vw;
+          }
+        }
+
+        .right-box-active{
+          border: 1px solid #47b4ab;
+          color: #47b4ab;
+          border-radius: 2px;
+          width: 16vw;
+          height: 6vw;
+          line-height: 6vw;
+          text-align: center;
+          font-weight: bold;
+          .iconfont{
+            color: #47b4ab;
+            font-size: 3vw;
+          }
+        }
+      }
+    }
+  }
+}

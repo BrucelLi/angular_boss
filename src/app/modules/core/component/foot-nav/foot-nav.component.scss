@@ -1,0 +1,28 @@
+.boss-home-bottom-nav{
+  width: 100vw;
+  height: 15vw;
+  background-color: white;
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  align-items: center;
+  z-index: 100;
+  .boss-home-bottom-nav-line{
+    text-align: center;
+    color: #878787;
+    position: relative;
+    .iconfont{
+      font-size: 6vw;
+    }
+    .boss-home-bottom-nav-line-badge{
+      position: absolute;
+      bottom: 9vw;
+    }
+  }
+  .active{
+    color: #444444;
+  }
+}
